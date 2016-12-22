@@ -16,8 +16,8 @@ namespace test22.ViewModel
         /// </summary>
         public MainViewModel()
         {
-            ClickCommand = new Command(arg => ClickMethod());
-            People = new PeopleModel
+            var ClickCommand = new Command(arg => ClickMethod());
+            var People = new PeopleModel
             {
                 FirstName = "First name",
                 LastName = "Last name"
