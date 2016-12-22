@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using test22.Model;
+using System.Windows;
+using System.Windows.Input;
 
 namespace test22.ViewModel
 {
@@ -14,6 +16,7 @@ namespace test22.ViewModel
         /// </summary>
         public MainViewModel()
         {
+            ClickCommand = new Command(arg => ClickMethod());
             People = new PeopleModel
             {
                 FirstName = "First name",
@@ -25,5 +28,20 @@ namespace test22.ViewModel
         /// Get or set people.
         /// </summary>
         public PeopleModel People { get; set; }
+
+        /// <summary>
+        /// Get or set ClickCommand.
+        /// </summary>
+        public ICommand ClickCommand { get; set; }
+
+        /// <summary>
+        /// Click method.
+        /// </summary>
+        private void ClickMethod()
+        {
+            MessageBox.Show("This is click command.");
+        }
+
+       
     }
 }
